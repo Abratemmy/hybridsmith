@@ -1,0 +1,61 @@
+.OtherPagesBanner{
+    background: linear-gradient(90deg,#abc0b7a8 0%, #5cc09477 50%, rgba(8, 71, 8, 0.63) 100%),url(('../../Images/otherpagesbanner.jpg')) no-repeat center;
+    background-size: cover;
+    position: relative;
+    width: 100%;
+    padding: 50px 0px;
+    height: 300px;
+    display: flex;
+    align-items: center;
+
+    .content{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .left{
+            font-size: 40px;
+            font-weight: 700;
+            color: #fff;
+            max-width: 45%;
+            font-family: var(--textFamily);
+
+        }
+        .right{
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 14px;
+            color: #fff;
+            font-family: var(--textFamily);
+            .text{
+                font-size: 20px;
+                font-weight: 600;
+            }
+
+            a{
+                text-decoration: none;
+                color:#fff;
+            }
+            .text2{
+                color: var(--secondaryColor);
+            }
+        }
+
+        @media screen and (min-width: 769px) and (max-width: 1115px) {
+            .left{
+                    max-width: 70%;
+                
+            }
+        }
+        @media screen and (max-width: 768px) {
+            flex-direction: column-reverse;
+            gap: 20px;
+            align-items: flex-start;
+            .left{
+                max-width: 80%;
+                font-size: 30px;
+            }
+        }
+    }
+}

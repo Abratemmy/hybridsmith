@@ -1,38 +1,96 @@
-.App {
-  text-align: center;
+:root{
+  --primaryColor: #14372d;
+  --secondaryColor: #67a07d;
+  --lightPrimaryColor: #e5ff5e;
+  --offWhite: rgba(255, 255, 255, 0.70);
+  --headingFamily: "Space Grotesk", sans-serif;
+  --textFamily: "Poppins", sans-serif;
+  --grayColor: #abc0b7a8;
+  --blackColor: #363636;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  /* -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased; */
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+body {
+  background: var(--grayColor)!important;
+  width: 100%;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.pageSlidingText{
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+  width: 100%;
+  padding: 30px 0px;
+}
+.pageSlidingText .textWrapper {
+  display: inline-flex;
+  animation: slideText 15s linear infinite;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.pageSlidingText .text {
+  color: transparent;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: var(--primaryColor);
+  text-transform: uppercase;
+  font-size: 100px;
+  font-weight: 700;
+  line-height: 1em;
+  margin-right: 3rem;
+}
+.pageSlidingText .text span {
+  -webkit-text-stroke-width: 0;
+  -webkit-text-stroke-color: none;
+  color: var(--primaryColor);
+}
+
+@keyframes slideText {
+  0% {
+    transform: translateX(0);
   }
-  to {
-    transform: rotate(360deg);
+  100% {
+    transform: translateX(-50%);
   }
+}
+
+.pagesubTitle{
+    font-size: 18px;
+    color: var(--primaryColor);
+    font-weight: 700;
+    font-family: var(--headingFamily);
+    text-transform: uppercase;
+}
+.pageTitle{
+  font-size: 30px;
+  font-family: var(--textFamily);
+  font-weight: 700;
+  padding: 10px 0px;
+}
+.pageText{
+  font-size: 16px;
+  font-family: var(--headingFamily);
+  color: var(--blackColor);
+  line-height: 1.7em;
+  padding: 10px 0px 0px 0px;
+}
+
+/* styling for swiper dot */
+.swiper-pagination-bullet {
+  background: var(--lightPrimaryColor)!important;
+  opacity: 0.8;
+  width: 15px!important;
+  height: 15px!important;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  margin: 0px 10px!important
+}
+.swiper-pagination-bullet-active {
+  opacity: 1;
+  transform: scale(1.2);
 }

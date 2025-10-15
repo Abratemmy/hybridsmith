@@ -1,0 +1,155 @@
+.aboutUsPage{
+    width: 100%;
+    position: relative;
+    padding: 40px 30px;
+    .aboutUsContent{
+        background: #fff;
+        border-radius: 20px;
+        width: 100%;
+        padding: 40px 20px 10px;
+        box-shadow: rgba(0, 0, 0, 0.1);
+        margin-bottom: 20px;
+    }
+    .imageContainer{
+        width: 100%;
+         border-radius: 20px;
+        border-right: 15px solid var(--primaryColor);
+        border-bottom: 15px solid var(--secondaryColor);
+        img{
+            width: 100%;
+            border-top-left-radius: 20px;
+        }
+    }
+
+    // another section for rating here
+    .aboutRating {
+        width: 100%;
+        padding: 50px 0;
+        position: relative;
+
+        .aboutRatingContent {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            gap: 20px;
+            flex-wrap: wrap;
+
+            .ratingItem {
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 5px;
+                height: 200px;
+                width: 200px;
+                border-radius: 50%;
+                overflow: hidden;
+                color: var(--primaryColor);
+
+                // Rotating border using pseudo-element
+                &::before {
+                    content: '';
+                    position: absolute;
+                    inset: 0;
+                    border-radius: 50%;
+                    padding: 2px;
+                    background: conic-gradient(
+                    from 0deg,
+                    var(--primaryColor),
+                    transparent 90%,
+                    var(--primaryColor)
+                    );
+                    mask: 
+                    linear-gradient(#31ebf1 0 0) content-box, 
+                    linear-gradient(#51e5f0 0 0);
+                    -webkit-mask-composite: xor;
+                    mask-composite: exclude;
+                    animation: rotateBorder 4s linear infinite;
+                }
+                // Animation for continuous rotation
+                @keyframes rotateBorder {
+                    0% {
+                        transform: rotate(0deg);
+                    }
+                    100% {
+                        transform: rotate(360deg);
+                    }
+                }
+
+                .ratingNumber {
+                    font-size: 50px;
+                    font-weight: 700;
+                    z-index: 1;
+                }
+
+                .ratingText {
+                    font-size: 16px;
+                    font-weight: 600;
+                    text-transform: uppercase;
+                    z-index: 1;
+                }
+            }
+        }
+    }
+
+
+    // another sesion here for the qaboutbanner
+    .aboutbannerSection{
+        position: relative;
+        width: 100%;
+        padding: 40px 0px;
+        .aboutbannerContent{
+            width: 70%;
+            margin: 0 auto;
+            text-align: center;
+            .bannerLink{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 20px;
+                margin-top: 10px;
+                .pagesubTitle{
+                    background: #fff;
+                    border-radius: 10px;
+                    padding: 10px 20px;
+                    .icon{
+                        font-size: 30px;
+                    }
+                    span{
+                        display: block;
+                        padding: 10px 0px;
+                    }
+                    a{
+                        text-decoration: none;
+                        color: var(--primaryColor);
+                        transition: 0.4s all ease;
+                    }
+                    a:hover{
+                        color: var(--secondaryColor)
+                    }
+                }
+                .or{
+                    font-size: 16px;
+                    color: var(--textColor);
+                    font-weight: 600;
+                    font-family: var(--textFamily);
+                }
+            }
+        }
+        @media screen and (max-width: 1000px){
+            .aboutbannerContent{
+                width: 90%;
+            }
+            
+        }
+        @media screen and (max-width: 750px){
+            .aboutbannerContent{
+                width: 98%;
+            }
+            
+        }
+    }
+
+}

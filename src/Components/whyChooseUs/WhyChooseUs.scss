@@ -1,0 +1,98 @@
+// another section for whychoose us here
+.whyChooseSection{
+    position: relative;
+    width: 100%;
+    padding: 60px 0px;
+    background: url('../../Images/bg1.avif') no-repeat center center/cover;
+    .sectionTitle{
+        font-size: 30px;
+        font-family: var(--textFamily);
+        font-weight: 700;
+        text-align: center;
+        padding-bottom: 40px;
+    }
+    .chooseContent{
+      .pagesubTitle{
+            color: #fff;
+        }
+        .pageTitle{
+            color: #fff;
+        }
+        .chooseText{
+            color: #fff;
+            line-height: 1.6;
+            padding: 14px 0px;
+            font-family: var(--headingFamily);
+            font-size: 15px;
+        }
+        .choosePoints{
+            padding-top: 10px;
+            .point{
+                display: flex;
+                align-items: flex-start;
+                gap: 20px;
+                padding: 20px 0px;
+                font-family: var(--headingFamily);
+                color: #fff;
+                border-bottom: 2px dashed #fff;
+                .pointImage{
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    .pointCircle{
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        width: 50px;
+                        height: 50px;
+                        border-radius: 50%;
+                        background: #fff;
+                        .icon{
+                            font-size: 30px;
+                            color: var(--primaryColor);
+                        }
+                    }
+                
+                }
+                .pointTitle{
+                    font-size: 20px;
+                    font-family: var(--textFamily);
+                    font-weight: 600;
+                    padding-bottom: 10px;
+                }
+                .pointText{
+                    font-size: 15px;
+                    font-family: var(--headingFamily);
+                    line-height: 1.6;
+                }
+            }
+            .point:last-child{
+                border-bottom: none;
+            }
+            
+        }
+    }
+    .chooseImage{
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+    }
+    @media (max-width: 768px){
+        .chooseContent, .chooseImage{
+            text-align: center;
+        }
+        .choosePoints{
+            .point{
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                .pointImage{
+                    margin-bottom: 10px;
+                }
+            }
+        }
+    }
+}

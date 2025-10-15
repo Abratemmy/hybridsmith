@@ -1,0 +1,27 @@
+.pageButton{
+    position: relative;
+    display: flex;
+    .buttonText{
+        background: var(--primaryColor);
+        width: fit-content;
+        text-decoration: none;
+        padding: 10px 20px;
+        color: #fff;
+        font-size: 16px;
+        font-family: var(--headingFamily);
+        font-weight: 600;
+        transition: 0.4s all ease;
+        border: 2px solid var(--primaryColor)
+    }
+    .buttonText:hover{
+        background: var(--secondaryColor);
+    }
+    .buttonText2{
+        background: transparent;
+        border: 2px solid var(--primaryColor);
+    }
+   .buttonText2:hover{
+        background: var(--primaryColor);
+        color: #fff;
+    }
+}
