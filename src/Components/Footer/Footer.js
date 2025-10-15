@@ -15,7 +15,7 @@ function Footer() {
                             <div className="image">
                                 <img src='' alt="Logo" />
                             </div>
-                            <div className="text" style={{ padding: '10px 0px' }}>Pedar Energy Limited is a trusted Nigerian energy services provider specializing in integrated solutions for the oil & gas, power, and industrial sectors.  </div>
+                            <div className="text" style={{ padding: '10px 0px' }}>Hybridsmith is a manpower and training consultancy specializing in logistics and operational support. </div>
                             <div className="footerCall" style={{ padding: '20px 0px 10px' }}>
                                 <MdMessage className="call" />
                                 <div className="footer-title">Support

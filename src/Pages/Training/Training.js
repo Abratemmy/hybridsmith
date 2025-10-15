@@ -1,10 +1,21 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import './Training.scss';
 import OtherPagesBanner from '../../Components/OtherPagesBanner/OtherPagesBanner';
+import { MdOutlineAddIcCall, MdEmail } from "react-icons/md";
+
 
 function Training() {
 
     const [activeTab, setActiveTab] = useState("readmore");
+
+    // this section is for to scroll to where the training form is
+    const formRef = useRef(null);
+    const scrollToForm = () => {
+        if (formRef.current) {
+            formRef.current.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
+
     return (
         <div>
             <OtherPagesBanner
@@ -17,22 +28,46 @@ function Training() {
             <div className="trainingPage">
                 <div className="trainingPageContent">
                     <div className="container">
-                        <div className="topContent">
-                            <div className='pagesubTitle'>Our Training</div>
-                            <div className='pageTitle'>Empowering Your Workforce with Accredited Training Programs</div>
-                            <div className='pageText'>
-                                At Hybridsmith, we understand that a well-trained workforce is the backbone
-                                of any successful organization. That's why we offer a comprehensive range of
-                                accredited training programs designed to enhance skills, improve safety, and boost
-                                productivity across various industries. Our training solutions are tailored to meet the
-                                unique needs of your business, ensuring that your team is equipped with the knowledge and
-                                expertise required to excel in their roles.
+                        <div className="row g-4">
+                            <div className="col-lg-9 col-md-12 col-sm-12 ">
+                                <div className="topContent">
+                                    <div className='pagesubTitle'>Our Training</div>
+                                    <div className='pageTitle'>Empowering Your Workforce with Accredited Training Programs</div>
+                                    <div className='pageText'>
+                                        At Hybridsmith, we understand that a well-trained workforce is the backbone
+                                        of any successful organization. That's why we offer a comprehensive range of
+                                        accredited training programs designed to enhance skills, improve safety, and boost
+                                        productivity across various industries. Our training solutions are tailored to meet the
+                                        unique needs of your business, ensuring that your team is equipped with the knowledge and
+                                        expertise required to excel in their roles.
+                                    </div>
+
+                                    <div className='pageText'>
+                                        Our catalog emphasizes logistics and operations training, while also covering drilling, EPC, and safety programs.
+                                    </div>
+                                </div>
                             </div>
 
-                            <div className='pageText'>
-                                Our catalog emphasizes logistics and operations training, while also covering drilling, EPC, and safety programs.
+                            <div className="col-lg-3 col-md-7 col-sm-12 ">
+                                <div className="trainingContactCard">
+                                    <div className="contactCardTitle" onClick={scrollToForm}>Request Training</div>
+                                    <div className="content1">
+                                        <div className="iconContainer"><MdOutlineAddIcCall className="icon" /></div>
+                                        <div className="text">
+                                            <a href="tel:(+234) 807 836 6949">(+234) 807 836 6949</a>
+                                        </div>
+                                    </div>
+
+                                    <div className="content1">
+                                        <div className="iconContainer"><MdEmail className="icon" /></div>
+                                        <div className="text">
+                                            <a href="maitTo:info@hybridsmith.com">info@hybridsmith.com</a>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
+
 
                         {/* session for training tabs here */}
                         <div className="tabsContainer">
@@ -114,7 +149,14 @@ function Training() {
                             </div>
                         </div>
 
-
+                        {/* training form */}
+                        <div className="trainingForm" ref={formRef}>
+                            <div className='pagesubTitle'>Request Training</div>
+                            <div className='pageTitle'>Get in Touch</div>
+                            <div className='pageText'>
+                                Please fill out the form below to request training or ask any questions you may have. We look forward to hearing from you!
+                            </div>
+                        </div>
 
 
                     </div>

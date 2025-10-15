@@ -6,6 +6,62 @@
         background: #fff;
         border-radius: 20px;
         padding: 40px 0px;
+
+        .trainingContactCard{
+            background: var(--primaryColor);
+            color: #fff;
+            border-radius: 15px;
+            padding: 30px;
+           
+            .contactCardTitle{
+                font-size: large;
+                font-weight: 600;
+                margin-bottom: 35px;
+                font-family: var(--textFamily);
+                background: var(--secondaryColor);
+                padding: 10px 15px;
+                border-radius: 10px;
+                cursor: pointer;
+                text-align: center;
+                transition: 0.5s all ease;
+                &:hover{
+                    background: #fff;
+                    color: var(--secondaryColor);
+                }
+            }
+            .content1{
+                display: flex;
+                gap: 8px;
+                width: 100%;
+                align-items: center;
+                margin-bottom: 20px;
+                .iconContainer{
+                    width: 30px;
+                    height: 30px;
+                    background: #fff;
+                    border-radius: 50%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    .icon{
+                        font-size: 16px;
+                        color: var(--primaryColor);
+                    }
+                }
+                .text{
+                    font-size: 14px;
+                    font-family: var(--headingFamily);
+                    a{
+                        text-decoration: none;
+                        color: #fff;
+                        transition: 0.4s all ease;
+                    }
+                    a:hover{
+                        color: var(--secondaryColor);
+                    }
+                }
+            }
+        }
     }
 
     .tabsContainer {
