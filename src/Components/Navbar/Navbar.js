@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import './Navbar.scss';
 import { MdOutlineAddIcCall, MdEmail, MdAccessTime } from "react-icons/md";
 import { NavLink } from 'react-router-dom';
-import { IoLogInOutline } from "react-icons/io5";
 import { FaBars } from "react-icons/fa";
 import { IoMdClose } from "react-icons/io";
 import logo from '../../Images/logo.png';
@@ -73,31 +72,33 @@ function Navbar() {
                 </div>
                 :
                 <div className=" whenNotScroll">
-                    <div className="container">
-                        <div className="topNav">
-                            <div className='left'>
-                                <div className="container">
-                                    <div className="content">
-                                        <div className="iconContainer"><MdOutlineAddIcCall className="icon" /></div>
-                                        <div className="text">
-                                            <a href="tel:(+234) 807 836 6949">(+234) 807 836 6949</a>
+                    <div className="topNav">
+                        <div className='container'>
+                            <div className="topNavContent">
+                                <div className='left'>
+                                    <div className="container">
+                                        <div className="content">
+                                            <div className="iconContainer"><MdOutlineAddIcCall className="icon" /></div>
+                                            <div className="text">
+                                                <a href="tel:(+234) 807 836 6949">(+234) 807 836 6949</a>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div className='right'>
+                                <div className='right'>
 
-                                <div className="content">
-                                    <div className="iconContainer"><MdEmail className="icon" /></div>
-                                    <div className="text">
-                                        <a href="maitTo:info@hybridsmith.com">info@hybridsmith.com</a>
+                                    <div className="content">
+                                        <div className="iconContainer"><MdEmail className="icon" /></div>
+                                        <div className="text">
+                                            <a href="maitTo:info@hybridsmith.com">info@hybridsmith.com</a>
+                                        </div>
                                     </div>
-                                </div>
 
-                                <div className="content">
-                                    <div className="iconContainer"><MdAccessTime className="icon" /></div>
-                                    <div className="text">
-                                        Mon to Fri : 9am to 6pm
+                                    <div className="content">
+                                        <div className="iconContainer"><MdAccessTime className="icon" /></div>
+                                        <div className="text">
+                                            Mon to Fri : 9am to 6pm
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -151,7 +152,7 @@ function Navbar() {
                     <div className='closeIcon'><IoMdClose className="icon" /></div>
                 </div>
                 <div className="imageContainer">
-                    <img src={logo} alt="logo" />
+                    <NavLink to="/" onClick={handleClick}><img src={logo} alt="logo" /></NavLink>
                 </div>
                 <ul className="nav-menu">
                     <li className="nav-item">

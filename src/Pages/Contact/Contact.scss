@@ -1,0 +1,73 @@
+.contactContainer{
+    position: relative;
+    width: 100%;
+    padding: 60px 0px;
+    
+
+    .contactCardContainer{
+        margin: 50px 0px 10px;
+        .contactCard{
+            position: relative;
+            box-shadow: 9px 12px 38px 0px rgba(0, 0, 0, 0.103);
+            transition: all 0.5s;
+            background: #fff;
+            padding: 30px ;
+            height: 200px;
+            z-index:0;
+        }
+        .contactCard:before{
+            position: absolute;
+            top: 0; left: 0; bottom: 0; right: 0;
+            background: var(--primaryColor);
+            background-repeat: no-repeat;
+            opacity: 0;
+            content: "";
+            transform:  perspective(400px) scaleX(0);
+            transition: all 0.4s linear;
+            z-index: 0; 
+            border-bottom: 2px solid var(--primaryColor);
+        }
+        .contactCard:hover:before{
+            opacity: 1;
+            transform: perspective(400px) scale(1.0);
+        }
+        .contactCard .content{
+            position: relative;
+            z-index: 1; 
+        }
+        .contactCard{
+            font-family: var(--headingFamily);
+            .iconDiv{
+                position: relative;
+                padding-bottom: 20px;
+                .icon{
+                    font-size: 40px;
+                    color: var(--primaryColor);
+
+                }
+            }
+            h3{
+                font-weight: 600;
+                color:#222;
+            }
+            p{
+                font-family: var(--textFamily);
+                font-size: 16px;
+                a{
+                    color: #222;
+                    text-decoration: none;
+                    &:hover{
+                        color: var(--primaryColor);
+                    }
+                }
+            }
+        }
+        .contactCard:hover h3,
+        .contactCard:hover p,
+        .contactCard:hover .icon,
+        .contactCard:hover p a{
+            color: #fff;
+        }
+    }
+}
+

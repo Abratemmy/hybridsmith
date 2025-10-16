@@ -2,6 +2,7 @@ import React, { useState, useRef } from 'react';
 import './Training.scss';
 import OtherPagesBanner from '../../Components/OtherPagesBanner/OtherPagesBanner';
 import { MdOutlineAddIcCall, MdEmail } from "react-icons/md";
+import TrainingForm from './TrainingForm';
 
 
 function Training() {
@@ -12,7 +13,12 @@ function Training() {
     const formRef = useRef(null);
     const scrollToForm = () => {
         if (formRef.current) {
-            formRef.current.scrollIntoView({ behavior: 'smooth' });
+            const formPosition = formRef.current.getBoundingClientRect().top + window.scrollY;
+            const offset = window.innerHeight * 0.1; // 10% from top
+            window.scrollTo({
+                top: formPosition - offset,
+                behavior: "smooth",
+            });
         }
     };
 
@@ -150,12 +156,14 @@ function Training() {
                         </div>
 
                         {/* training form */}
-                        <div className="trainingForm" ref={formRef}>
-                            <div className='pagesubTitle'>Request Training</div>
+                        <div className="trainingFormContainer" ref={formRef}>
+                            <div className='pagesubTitle'>Request a training Session</div>
                             <div className='pageTitle'>Get in Touch</div>
                             <div className='pageText'>
                                 Please fill out the form below to request training or ask any questions you may have. We look forward to hearing from you!
                             </div>
+
+                            <TrainingForm />
                         </div>
 
 

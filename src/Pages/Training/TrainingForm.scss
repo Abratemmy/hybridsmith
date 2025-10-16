@@ -1,0 +1,169 @@
+.trainingFormContainer {
+  position: relative;
+  padding: 40px 15px;
+  background: #f4f7fb;
+  @media screen and (max-width: 600px) {
+    padding: 40px 8px;
+  }
+}
+
+.pageForm {
+  max-width: 600px;
+  margin: 20px auto;
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+
+  .formGroup {
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+    label {
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: #2a2a2a;
+      font-size: 14px;
+      font-family: var(--textFamily);
+    }
+
+    input,
+    textarea,
+    select {
+        width: 100%;
+        padding: 8px 15px;
+        border: 1.8px solid #d1d1d1;
+        border-radius: 5px;
+        font-size: 14px;
+        background: #f9fafc;
+        transition: 0.3s ease;
+        appearance: none;
+        outline: none;
+        font-family: var(--headingFamily);
+        &:focus {
+            border-color: var(--secondaryColor);
+            background: #fff;
+            box-shadow: 0 0 0 3px rgba(0, 74, 173, 0.1);
+        }
+
+        &::placeholder {
+            color: #aaa;
+        }
+    }
+
+    /* Custom dropdown icon for select */
+    select {
+      background-image: url("data:image/svg+xml;utf8,<svg fill='%67a07d' height='30' viewBox='0 0 24 24' width='30' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+      background-repeat: no-repeat;
+      background-position: right 12px center;
+      background-size: 20px;
+      cursor: pointer;
+      option {
+        color: var(--secondaryColor);
+        font-weight: 500;
+      }
+    }
+
+    /* Custom calendar icon for date input */
+    input[type="date"] {
+      background-image: url("data:image/svg+xml;utf8,<svg fill='%23004aad' height='20' viewBox='0 0 24 24' width='20' xmlns='http://www.w3.org/2000/svg'><path d='M19 4h-1V2h-2v2H8V2H6v2H5c-1.1 0-1.99.9-1.99 2L3 20c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11z'/></svg>");
+      background-repeat: no-repeat;
+      background-position: right 12px center;
+      background-size: 20px;
+      cursor: pointer;
+    }
+
+    .error {
+      color: #d93025;
+      font-size: 13px;
+      margin-top: 4px;
+    }
+  }
+
+  .submitBtn {
+    width: 100%;
+    padding: 14px;
+    background: var(--secondaryColor);
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+    letter-spacing: 0.3px;
+
+    &:hover {
+      background: var(--primaryColor);
+      transform: translateY(-1px);
+    }
+  }
+}
+
+/* ✅ Success Modal */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99;
+}
+
+.modalBox {
+  background: #fff;
+  padding: 30px 25px;
+  border-radius: 14px;
+  text-align: center;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  animation: popIn 0.3s ease;
+
+  h3 {
+    color: #004aad;
+    margin-bottom: 10px;
+  }
+
+  p {
+    margin-bottom: 20px;
+    color: #333;
+  }
+
+  .closeBtn {
+    padding: 10px 25px;
+    background: #004aad;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    &:hover {
+      background: #00367a;
+    }
+  }
+}
+
+@keyframes popIn {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* 📱 Responsive */
+@media (max-width: 600px) {
+  .pageForm {
+    padding: 20px;
+  }
+}

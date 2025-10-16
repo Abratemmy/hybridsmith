@@ -23,6 +23,11 @@
         display: flex;
         gap: 20px;
         margin-top: 20px;
+        @media screen and (max-width: 576px){
+            flex-direction: column;
+            align-items: flex-start;
+            
+        }
     }
     @media screen and (max-width: 992px){
         .content{
@@ -33,12 +38,17 @@
         }
 
     }
+    @media screen and (max-width: 500px){
+        .content{
+            width: 100%;
+        }
+
+    }
    
 }
  @media screen and (max-width: 1200px){
     .homeBanner{
-        height: auto;
-        
+        height: auto;   
     }
         
 }
@@ -115,6 +125,13 @@
     @media (max-width: 768px){
         .helpContent, .helpImage{
             text-align: center;
+        }
+        .pageButton{
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            text-align: center;
+            margin-top: 20px;
         }
     }
 }

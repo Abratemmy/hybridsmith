@@ -1,4 +1,3 @@
-import { useEffect, useRef } from "react";
 import './Home.scss'
 import Button from '../../Components/Button/Button';
 import CounterComponent from '../../Components/Counter/CounterComponent';
@@ -27,9 +26,11 @@ function Home() {
                         <p>Helping organizations build reliable teams, optimize logistics operations, and empower people with accredited training across drilling, EPC, and industrial projects.</p>
                         <div className='bannerButtons'>
                             <Button text='Talk to an Expert'
+                                goTo='/contact_us'
                             />
                             <Button text='Explore Training Catalog'
                                 design2
+                                goTo='/training'
                             />
                         </div>
                     </div>
@@ -57,8 +58,8 @@ function Home() {
                         <div className='col-lg-5 col-md-12 col-sm-12'>
                             <div className='aboutContent'>
                                 <div className='aboutText'>
-                                    <div className='subTitle'>About Us</div>
-                                    <div className='title'>Helping organizations build reliable teams, optimize logistics, and empower people with accredited training.</div>
+                                    <div className='pagesubTitle'>About Us</div>
+                                    <div className='pageTitle'>Helping organizations build reliable teams, optimize logistics, and empower people with accredited training.</div>
                                     <p>Hybridsmith is a manpower and training consultancy specializing in logistics and operational support. We supply warehouse officers, logistics coordinators, fleet managers, EPC engineers, and drilling crews backed by accredited training that ensures safety, efficiency, and measurable impact.</p>
                                     <Button text='Learn More' goTo='/about_us' />
                                 </div>

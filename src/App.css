@@ -59,6 +59,16 @@ body {
   }
 }
 
+@media screen and (max-width: 500px)  {
+  .pageSlidingText{
+    padding: 20px 0px;
+  }
+  .pageSlidingText .text {
+    font-size: 70px;
+    margin-right: 1rem;
+  }
+}
+
 .pagesubTitle{
     font-size: 18px;
     color: var(--primaryColor);
@@ -71,6 +81,11 @@ body {
   font-family: var(--textFamily);
   font-weight: 700;
   padding: 10px 0px;
+}
+@media screen and (max-width: 500px)  {
+  .pageTitle{
+    font-size: 24px;
+  }
 }
 .pageText{
   font-size: 16px;
