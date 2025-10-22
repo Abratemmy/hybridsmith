@@ -18,29 +18,28 @@ function CounterComponent() {
                         <h2>
                             {inView ? <CountUp end={1000} duration={4} /> : 0}+
                         </h2>
-                        <p>professionals deployed (drilling crews, EPC specialists, logistics & warehousing officers)</p>
+                        <p>Professionals deployed across drilling and EPC operations</p>
                     </div>
 
                     <div className='counterItem'>
                         <h2>
-                            {inView ? <CountUp end={96} duration={2} /> : 0}%
+                            {inView ? <CountUp end={96} duration={3} /> : 0}%
                         </h2>
-                        <p>of projects mobilized on schedule</p>
+                        <p>On-time project mobilization</p>
                     </div>
 
                     <div className='counterItem'>
                         <h2>
-                            {inView ? <CountUp end={25} duration={3} /> : 0}-
                             {inView ? <CountUp end={30} duration={3} /> : 0}%
                         </h2>
-                        <p>logistics cost savings delivered for clients</p>
+                        <p>Average logistics cost savings for clients</p>
                     </div>
 
                     <div className='counterItem'>
                         <h2>
                             {inView ? <CountUp end={98} duration={3} /> : 0}%
                         </h2>
-                        <p>incident-free training hours</p>
+                        <p>Incident-free training hours</p>
                     </div>
                     {/* <div className="counterContainer">
 

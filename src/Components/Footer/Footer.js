@@ -46,22 +46,23 @@ function Footer() {
                     </div>
                     <div className="col-lg-4 col-md-6 col-sm-12 footer-column">
                         <div className="content">
-                            <div className="footer-title">MAKE an Appointment</div>
+                            <div className="footer-title">Request a Service</div>
                             <div className="pageText">
-                                Getting an accurate diagnosis can be one of the most impactful experiences that you can have.
+                                Ready to streamline your logistics or manpower operations?
+                                Contact our team today to discuss how we can support your goals.
                             </div>
                             <div className="footerCallArea">
                                 <div className="footerCall">
                                     <MdOutlineAddIcCall className="call" />
-                                    <div className="footer-title">Need a Consultation?
-                                        <span>(+234) 807 836 6949 </span>
+                                    <div className="footer-title">Need Assistance?
+                                        <span>(+234) 901 882 1570 </span>
                                     </div>
                                 </div>
 
                                 <div className="footerCall">
                                     <FaLocationDot className="call" />
-                                    <div className="footer-title">Office
-                                        <span> 9 Anifowoshe Street, Victoria Island Lagos</span>
+                                    <div className="footer-title">Head Office
+                                        <span> 39 Alfred Rewane road, Ikoyi, Lagos, Nigeria</span>
                                     </div>
                                 </div>
                             </div>

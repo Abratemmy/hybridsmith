@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import emailjs from "@emailjs/browser";
 import "./TrainingForm.scss";
+import { ToastContainer, toast } from 'react-toastify';
 
 const TrainingForm = () => {
     const [formData, setFormData] = useState({
@@ -14,6 +15,7 @@ const TrainingForm = () => {
         message: "",
     });
 
+    const [loading, setLoading] = useState(false);
     const [errors, setErrors] = useState({});
     const [showModal, setShowModal] = useState(false);
 
@@ -45,16 +47,17 @@ const TrainingForm = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         if (!validate()) return;
-
+        setLoading(true)
         emailjs
             .send(
-                "YOUR_SERVICE_ID", // Replace with EmailJS Service ID
-                "YOUR_TEMPLATE_ID", // Replace with EmailJS Template ID
+                "service_v0zuw35",
+                "template_67i5x4l",
                 formData,
-                "YOUR_PUBLIC_KEY" // Replace with EmailJS Public Key
+                "b8v2BfbaPC-BRh2Dh"
             )
             .then(
                 () => {
+                    setLoading(false)
                     setShowModal(true);
                     setFormData({
                         firstName: "",
@@ -68,6 +71,8 @@ const TrainingForm = () => {
                     });
                 },
                 (error) => {
+                    setLoading(false)
+                    toast.error('Ohpps! Your request is not submitted')
                     console.error("Email send failed:", error.text);
                 }
             );
@@ -129,15 +134,10 @@ const TrainingForm = () => {
                     <label>Please select your interested training</label>
                     <select name="training" value={formData.training} onChange={handleChange}>
                         <option value="">-- Select Training --</option>
-                        <option>Logistics & Warehousing Excellence</option>
-                        <option>Transport & Fleet Management</option>
-                        <option>Inventory Control & Warehouse Digitization</option>
-                        <option>Supplier Performance & Risk Management</option>
-                        <option>EPC Project Controls</option>
-                        <option>Turnaround & Shutdown Planning</option>
-                        <option>PLC Fundamentals</option>
-                        <option>Rotating Equipment Maintenance</option>
-                        <option>H2S Awareness</option>
+                        <option>Logistics & Operational Excellence</option>
+                        <option>Technical & Engineering Training</option>
+                        <option>Safety & Compliance</option>
+                        <option>Management & Governance</option>
                     </select>
                     {errors.training && <span className="error">{errors.training}</span>}
                 </div>
@@ -178,10 +178,11 @@ const TrainingForm = () => {
 
                 </div>
 
-                <button type="submit" className="submitBtn">
-                    Submit Request
+                <button type="submit" className={loading ? "submitBtn submitDefault" : 'submitBtn'}>
+                    {loading ? 'Submitting ...' : 'Submit Request'}
                 </button>
             </form>
+            <ToastContainer />
 
             {/* ✅ Success Modal */}
             {showModal && (

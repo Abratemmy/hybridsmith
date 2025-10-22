@@ -38,18 +38,18 @@ function Training() {
                             <div className="col-lg-9 col-md-12 col-sm-12 ">
                                 <div className="topContent">
                                     <div className='pagesubTitle'>Our Training</div>
-                                    <div className='pageTitle'>Empowering Your Workforce with Accredited Training Programs</div>
+                                    <div className='pageTitle'>Accredited training that builds competence, confidence, and compliance.</div>
                                     <div className='pageText'>
                                         At Hybridsmith, we understand that a well-trained workforce is the backbone
                                         of any successful organization. That's why we offer a comprehensive range of
                                         accredited training programs designed to enhance skills, improve safety, and boost
-                                        productivity across various industries. Our training solutions are tailored to meet the
-                                        unique needs of your business, ensuring that your team is equipped with the knowledge and
-                                        expertise required to excel in their roles.
+                                        productivity across various industries.
                                     </div>
 
                                     <div className='pageText'>
-                                        Our catalog emphasizes logistics and operations training, while also covering drilling, EPC, and safety programs.
+                                        Our training programs are designed for real-world performance.
+                                        Delivered by industry practitioners, every course combines practical learning with measurable outcomes — equipping teams
+                                        to work smarter, safer, and more efficiently.
                                     </div>
                                 </div>
                             </div>
@@ -60,7 +60,7 @@ function Training() {
                                     <div className="content1">
                                         <div className="iconContainer"><MdOutlineAddIcCall className="icon" /></div>
                                         <div className="text">
-                                            <a href="tel:(+234) 807 836 6949">(+234) 807 836 6949</a>
+                                            <a href="tel:(+234) 901 882 1570">(+234) 901 882 1570</a>
                                         </div>
                                     </div>
 
@@ -85,16 +85,16 @@ function Training() {
                                     Learn More
                                 </button>
                                 <button
-                                    className={activeTab === "outline" ? "tabButton active" : "tabButton"}
-                                    onClick={() => setActiveTab("outline")}
+                                    className={activeTab === "category" ? "tabButton active" : "tabButton"}
+                                    onClick={() => setActiveTab("category")}
                                 >
-                                    Course Outline
+                                    Training Categories
                                 </button>
                                 <button
-                                    className={activeTab === "learn" ? "tabButton active" : "tabButton"}
-                                    onClick={() => setActiveTab("learn")}
+                                    className={activeTab === "delivery" ? "tabButton active" : "tabButton"}
+                                    onClick={() => setActiveTab("delivery")}
                                 >
-                                    In the Class, You Will Learn...
+                                    Delivery Options
                                 </button>
                             </div>
 
@@ -102,53 +102,65 @@ function Training() {
                                 {activeTab === "readmore" && (
                                     <div>
                                         <div className='pageText'>
-                                            Explore the tabs to learn more about this course
+                                            Explore the tabs to learn more about this training
                                         </div>
                                     </div>
                                 )}
 
-                                {activeTab === "outline" && (
+                                {activeTab === "category" && (
                                     <div>
-                                        <div className='title'>Our Course outline include: </div>
-                                        <ul>
-                                            <li>Logistics & Warehousing Excellence</li>
-                                            <li>Transport & Fleet Management</li>
-                                            <li>Inventory Control & Warehouse Digitization</li>
-                                            <li>Supplier Performance & Risk Management</li>
-                                            <li>EPC Project Controls</li>
-                                            <li>Turnaround & Shutdown Planning</li>
-                                            <li>PLC Fundamentals</li>
-                                            <li>Rotating Equipment Maintenance</li>
-                                            <li>H2S Awareness</li>
-                                        </ul>
+                                        <div className='title'>Our Training categories include: </div>
+                                        <div className="pageText"><strong><span>1.</span>Logistics & Operational Excellence</strong>
+                                            <ul>
+                                                <li>Warehousing & Inventory Control</li>
+                                                <li>Transport & Fleet Management</li>
+                                                <li>Procurement & Vendor Compliance</li>
+                                            </ul>
+                                        </div>
+
+                                        <div className="pageText"><strong><span>2.</span>Technical & Engineering Training</strong>
+                                            <ul>
+                                                <li>PLC Fundamentals</li>
+                                                <li>Rotating Equipment Maintenance</li>
+                                                <li>EPC Project Controls</li>
+                                            </ul>
+                                        </div>
+
+                                        <div className="pageText"><strong><span>3.</span>Safety & Compliance</strong>
+                                            <ul>
+                                                <li>H₂S Awareness</li>
+                                                <li>Turnaround & Shutdown Planning</li>
+                                                <li>Safety Leadership</li>
+                                            </ul>
+                                        </div>
+
+                                        <div className="pageText"><strong><span>4.</span>Management & Governance</strong>
+                                            <ul>
+                                                <li>Strategic Procurement</li>
+                                                <li>Vendor Performance & Risk Management</li>
+                                                <li>Contracting for Performance</li>
+                                            </ul>
+                                        </div>
+
                                     </div>
                                 )}
 
-                                {activeTab === "learn" && (
+                                {activeTab === "delivery" && (
                                     <div>
-                                        <div className='title'>Learning Outcomes</div>
+                                        <div className='title'>Delivery Options</div>
                                         <ul>
-                                            <li><strong>Logistics & Warehousing Excellence:</strong> Learn to design efficient warehouse layouts, streamline material flow, and optimize logistics performance using global best practices.</li>
+                                            <li>Instructor-Led Training (ILT)</li>
 
-                                            <li><strong>Transport & Fleet Management:</strong> Understand how to plan, schedule, and maintain transport fleets for reliability, safety, and cost-effectiveness.</li>
+                                            <li>Virtual Instructor-Led Training (VILT)</li>
 
-                                            <li><strong>Inventory Control & Warehouse Digitization:</strong> Master techniques for real-time inventory tracking, demand forecasting, and using digital tools for warehouse automation.</li>
+                                            <li>Blended Learning</li>
 
-                                            <li><strong>Supplier Performance & Risk Management:</strong> Gain skills in vendor evaluation, contract compliance, and mitigating supply chain risks for better resilience.</li>
-
-                                            <li><strong>EPC Project Controls:</strong> Learn how to manage budgets, schedules, and resources effectively in complex Engineering, Procurement, and Construction projects.</li>
-
-                                            <li><strong>Turnaround & Shutdown Planning:</strong> Develop the ability to coordinate large-scale maintenance activities safely, on time, and within budget.</li>
-
-                                            <li><strong>PLC Fundamentals:</strong> Understand the basics of programmable logic controllers, automation systems, and industrial control applications.</li>
-
-                                            <li><strong>Rotating Equipment Maintenance:</strong> Learn diagnostic, preventive, and corrective maintenance for pumps, compressors, and turbines.</li>
-
-                                            <li><strong>H₂S Awareness:</strong> Identify hydrogen sulfide hazards, understand emergency procedures, and apply safety protocols for high-risk environments.</li>
+                                            <li>In-House Corporate Programs </li>
                                         </ul>
 
+                                        <div className='title'>Accreditation:</div>
                                         <div className='pageText'>
-                                            By the end of this training, individuals and teams will be well-equipped with the knowledge and skills to enhance operational efficiency, ensure safety, and drive continuous improvement within their organizations.
+                                            Programs align with ISO, IOSH, and NEBOSH standards.
                                         </div>
                                     </div>
                                 )}

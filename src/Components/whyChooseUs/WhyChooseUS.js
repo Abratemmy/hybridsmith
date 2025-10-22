@@ -1,10 +1,19 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './WhyChooseUs.scss';
 import { IoHardwareChipSharp, IoTrainOutline, IoTrailSignSharp } from "react-icons/io5";
 import { LuWarehouse } from "react-icons/lu";
 import whychooseImage from '../../Images/whychooseus.png';
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 function WhyChooseUS() {
+    useEffect(() => {
+        AOS.init({
+            duration: 1000, // animation duration in ms
+            offset: 100, // offset (in px) from the original trigger point
+        });
+        AOS.refresh();
+    }, []);
     return (
         <div>
             <div className='whyChooseSection'>
@@ -20,7 +29,7 @@ function WhyChooseUS() {
 
                                 {/* ✅ One choosePoints container */}
                                 <div className='choosePoints'>
-                                    <div className='point'>
+                                    <div className='point' data-aos="fade-right">
                                         <div className="pointImage">
                                             <div className="pointCircle">
                                                 <LuWarehouse className='icon' />
@@ -34,21 +43,21 @@ function WhyChooseUS() {
                                         </div>
                                     </div>
 
-                                    <div className='point'>
+                                    <div className='point' data-aos="fade-right">
                                         <div className="pointImage">
                                             <div className="pointCircle">
                                                 <IoHardwareChipSharp className='icon' />
                                             </div>
                                         </div>
                                         <div className="pointContent">
-                                            <div className='pointTitle'>Strong Background in Drilling and EPC Manpower</div>
+                                            <div className='pointTitle'>Strong Background in Technical Manpower Staffing</div>
                                             <div className="pointText">
                                                 Our team understands the technical demands of drilling and EPC environments. We supply skilled, pre-vetted professionals — engineers, technicians, and site crews — who are trained to deliver high performance in complex project settings.
                                             </div>
                                         </div>
                                     </div>
 
-                                    <div className='point'>
+                                    <div className='point' data-aos="fade-right">
                                         <div className="pointImage">
                                             <div className="pointCircle">
                                                 <IoTrainOutline className='icon' />
@@ -62,7 +71,7 @@ function WhyChooseUS() {
                                         </div>
                                     </div>
 
-                                    <div className='point'>
+                                    <div className='point' data-aos="fade-right">
                                         <div className="pointImage">
                                             <div className="pointCircle">
                                                 <IoTrailSignSharp className='icon' />

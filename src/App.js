@@ -4,6 +4,7 @@ import Footer from './Components/Footer/Footer';
 import Navbar from './Components/Navbar/Navbar';
 import Router from './Components/Router';
 import 'bootstrap/dist/css/bootstrap.min.css';
+// import Construction from './Pages/Construction';
 
 function App() {
   return (
@@ -11,6 +12,8 @@ function App() {
       <Navbar />
       <Router />
       <Footer />
+
+      {/* <Construction /> */}
     </div>
   );
 }

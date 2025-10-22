@@ -1,3 +1,4 @@
+import React, { useEffect } from "react";
 import './Home.scss'
 import Button from '../../Components/Button/Button';
 import CounterComponent from '../../Components/Counter/CounterComponent';
@@ -7,24 +8,31 @@ import service1 from '../../Images/service1.png';
 import service2 from '../../Images/service2.png';
 import service3 from '../../Images/service3.png';
 import service4 from '../../Images/service4.png';
-import service5 from '../../Images/service5.png';
 import trainingImage from '../../Images/training.webp';
 import TestimonyComponent from "../../Components/TestimonyComponent/TestimonyComponent";
-import careerImage from '../../Images/career.jpg';
 import WhyChooseUS from "../../Components/whyChooseUs/WhyChooseUS";
+import { MdOutlineAddIcCall } from 'react-icons/md';
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 function Home() {
     // this is making the homeservciesection to scroll
-
+    useEffect(() => {
+        AOS.init({
+            duration: 1000, // animation duration in ms
+            offset: 100, // offset (in px) from the original trigger point
+        });
+        AOS.refresh();
+    }, []);
 
     return (
         <div>
             <div className="homeBanner">
                 <div className='container'>
                     <div className='content'>
-                        <div className='title'>World-class manpower. Smarter logistics. <span>Accredited training that delivers results.</span></div>
-                        <p>Helping organizations build reliable teams, optimize logistics operations, and empower people with accredited training across drilling, EPC, and industrial projects.</p>
-                        <div className='bannerButtons'>
+                        <div className='title animate__animated animate__fadeInDown animate__delay-0.5s animate__slow'>World-class manpower. Smarter logistics. <span>Accredited training that delivers results.</span></div>
+                        <p>Helping organizations build reliable teams, optimize logistics operations, and empower people through accredited training that drives measurable results.</p>
+                        <div className='bannerButtons animate__animated animate__fadeInUp animate__delay-1s'>
                             <Button text='Talk to an Expert'
                                 goTo='/contact_us'
                             />
@@ -40,8 +48,8 @@ function Home() {
 
             <div className="pageSlidingText">
                 <div className="textWrapper">
-                    <div className="text">HYBRIDSMITH RESOURCES <span>LIMITED</span></div>
-                    <div className="text">HYBRIDSMITH RESOURCES <span>LIMITED</span></div>
+                    <div className="text">People. Process. <span>Performance.</span></div>
+                    <div className="text">People. Process. <span>Performance.</span></div>
                 </div>
             </div>
 
@@ -56,12 +64,13 @@ function Home() {
                             </div>
                         </div>
                         <div className='col-lg-5 col-md-12 col-sm-12'>
-                            <div className='aboutContent'>
+                            <div className='aboutContent' data-aos="fade-left">
                                 <div className='aboutText'>
                                     <div className='pagesubTitle'>About Us</div>
-                                    <div className='pageTitle'>Helping organizations build reliable teams, optimize logistics, and empower people with accredited training.</div>
-                                    <p>Hybridsmith is a manpower and training consultancy specializing in logistics and operational support. We supply warehouse officers, logistics coordinators, fleet managers, EPC engineers, and drilling crews backed by accredited training that ensures safety, efficiency, and measurable impact.</p>
-                                    <Button text='Learn More' goTo='/about_us' />
+                                    <div className='pageTitle'>Empowering industries through manpower, logistics, and learning.</div>
+                                    <p>Hybridsmith Limited provides integrated manpower, logistics, and training solutions that help organizations operate faster, safer, and smarter.</p>
+                                    <p>We supply qualified technical and logistics personnel, optimize warehouse and transport systems, and deliver accredited training that builds real capability.</p>
+                                    <Button text='Learn More About Us' goTo='/about_us' />
                                 </div>
 
                             </div>
@@ -83,7 +92,7 @@ function Home() {
                         <div className="col-lg-6 col-md-12 col-sm-12">
                             <div className='helpContent'>
                                 <div className='helpText'>
-                                    <div className='pageTitle'>Let’s Help You Grow</div>
+                                    <div className='pageTitle'>Power your operations with Hybridsmith.</div>
                                     <div className='title'>Ready to optimize your logistics, build a reliable team, and empower your workforce with accredited training? Let’s talk about how Hybridsmith can support your success.</div>
                                     <Button text='Contact Us' goTo='/contact' />
                                 </div>
@@ -109,7 +118,7 @@ function Home() {
                 <div className='container'>
                     <div className="row g-4">
                         <div className="col-lg-6 col-md-12 col-sm-12">
-                            <div className='serviceText' >
+                            <div className='serviceText' data-aos="fade-right" >
                                 <div className='pagesubTitle'>WHAT WE DO?</div>
                                 <div className='pageTitle'>The services we offer are specifically designed to meet your needs</div>
                                 <p>At Hybridsmith, we offer a suite of services designed to meet the complex needs of industrial and energy projects. Our expertise spans manpower supply, logistics management, and accredited training programs — all tailored to help your organization operate safely, efficiently, and compliantly.</p>
@@ -127,18 +136,6 @@ function Home() {
                                         <div className="cardTitle">Manpower Outsourcing & Project Staffing</div>
                                         <div className="cardText">
                                             Skilled engineers, SCM officers, HSE/QA specialists for projects and operations
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div className="card">
-                                    <div className="cardIcon">
-                                        <img src={service5} alt="Service" className='icon' />
-                                    </div>
-                                    <div className="cardContent">
-                                        <div className="cardTitle">SCM Advisory & Procurement Governance</div>
-                                        <div className="cardText">
-                                            Vendor audits, contract reviews, supplier performance management, ESG compliance.
                                         </div>
                                     </div>
                                 </div>
@@ -190,8 +187,8 @@ function Home() {
                 {/* another section for training */}
                 <div className="pageSlidingText">
                     <div className="textWrapper">
-                        <div className="text">HYBRIDSMITH  <span>TRAINING</span></div>
-                        <div className="text">HYBRIDSMITH  <span>TRAINING</span></div>
+                        <div className="text">People. Process. <span>Performance.</span></div>
+                        <div className="text">People. Process. <span>Performance.</span></div>
                     </div>
                 </div>
                 <div className="container">
@@ -220,7 +217,7 @@ function Home() {
             <TestimonyComponent />
 
             {/* another section here for career page */}
-            <div className="careerSection">
+            {/* <div className="careerSection">
                 <div className="container">
                     <div className="row g-4">
                         <div className="col-lg-6 col-md-12 col-sm-12">
@@ -270,6 +267,27 @@ function Home() {
                     </div>
                 </div>
 
+            </div> */}
+
+            <div className='homebannerContentWrapper'>
+                <div className='container'>
+                    <div className="homebannerContent">
+                        <div className='pagesubTitle'>Performance you can measure. Partnerships you can trust.</div>
+                        <div className='pageTitle'>World-class manpower. Smarter logistics. Accredited training that delivers results.</div>
+                        <div className='pageText'>We operate across Nigeria with service hubs in Lagos, Port Harcourt, Abuja, and partnerships across West Africa.</div>
+                        <div className="bannerLink">
+                            <div className="pagesubTitle">
+                                <MdOutlineAddIcCall className="icon" />
+                                <span>Call us to request our services:</span>
+
+                                <div className="text">
+                                    <a href="tel:(+234) 901 882 1570">(+234) 901 882 1570</a>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     )

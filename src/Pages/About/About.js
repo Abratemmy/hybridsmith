@@ -1,25 +1,21 @@
-import React from 'react'
+import React, { useState } from 'react'
 import OtherPagesBanner from '../../Components/OtherPagesBanner/OtherPagesBanner'
 import './About.scss';
 import aboutImage from '../../Images/banner1.png'
 import WhyChooseUS from '../../Components/whyChooseUs/WhyChooseUS';
 import Button from '../../Components/Button/Button';
 import { MdOutlineAddIcCall } from 'react-icons/md';
-import CountUp from "react-countup";
-import { useInView } from "react-intersection-observer";
 
 function About() {
-    const { ref, inView } = useInView({
-        triggerOnce: true,   // only animate once
-        threshold: 0.5,      // 50% of section visible triggers it
-    });
+
+    const [activeTab, setActiveTab] = useState("mission");
     return (
         <div>
             <OtherPagesBanner
                 leftText="Driven by People. Defined by Excellence."
                 rightText="About Us"
-                otherPagesTextSlide="About"
-                otherPagesTextSlideSpan=" Hybridsmith"
+                otherPagesTextSlide="People. Process. "
+                otherPagesTextSlideSpan="Performance."
             />
 
             <div className="aboutUsPage">
@@ -29,9 +25,12 @@ function About() {
                             <div className="col-lg-6 col-md-12 col-sm-12 ">
                                 <div className="content">
                                     <div className='pagesubTitle'>About Us</div>
-                                    <div className='pageTitle'>Helping organizations build reliable teams, optimize logistics, and empower people with accredited training.</div>
+                                    <div className='pageTitle'>Empowering industries through manpower, logistics, and learning.</div>
                                     <div className='pageText'>
-                                        Hybridsmith is a leading provider of innovative energy solutions, dedicated to transforming the way we power our world. With a strong commitment to sustainability and cutting-edge technology, we specialize in delivering comprehensive energy services that cater to the evolving needs of our clients. Our team of experts works tirelessly to design, implement, and manage energy systems that are not only efficient but also environmentally responsible. At Hybridsmith, we believe in harnessing the power of innovation to create a brighter, cleaner future for generations to come.
+                                        Hybridsmith Limited is a leading manpower, logistics, and training consultancy committed to helping organizations achieve operational excellence.
+                                    </div>
+                                    <div className="pageText">
+                                        We bridge the gap between people, systems, and performance, delivering the expertise, governance, and training that turn everyday operations into measurable success.
                                     </div>
                                 </div>
                             </div>
@@ -42,28 +41,59 @@ function About() {
                             </div>
                         </div>
 
-                        <div className="aboutRating" ref={ref}>
-                            <div className='aboutRatingContent'>
-                                <div className='ratingItem'>
-                                    <div className='ratingNumber'>
-                                        {inView ? <CountUp end={20} duration={2} /> : 0}%
-                                    </div>
-                                    <div className='ratingText'>Cost Savings</div>
-                                </div>
+                        <div className="tabsContainer">
+                            <div className="tabsHeader">
+                                <button
+                                    className={activeTab === "mission" ? "tabButton active" : "tabButton"}
+                                    onClick={() => setActiveTab("mission")}
+                                >
+                                    OUR MISSION
+                                </button>
+                                <button
+                                    className={activeTab === "vision" ? "tabButton active" : "tabButton"}
+                                    onClick={() => setActiveTab("vision")}
+                                >
+                                    OUR VISION
+                                </button>
+                                <button
+                                    className={activeTab === "value" ? "tabButton active" : "tabButton"}
+                                    onClick={() => setActiveTab("value")}
+                                >
+                                    OUR CORE VALUES
+                                </button>
+                            </div>
 
-                                <div className='ratingItem'>
-                                    <div className='ratingNumber'>
-                                        {inView ? <CountUp end={95} duration={2} /> : 0}%
+                            <div className="tabContent">
+                                {activeTab === "mission" && (
+                                    <div>
+                                        <div className='pageText'>
+                                            To help organizations build reliable teams, optimize logistics operations, and empower people through accredited training that drives performance and safety.
+                                        </div>
                                     </div>
-                                    <div className='ratingText'>on-time delivery</div>
-                                </div>
+                                )}
 
-                                <div className='ratingItem'>
-                                    <div className='ratingNumber'>
-                                        {inView ? <CountUp end={0} duration={1} /> : 0}%
+                                {activeTab === "vision" && (
+                                    <div className='pageText'>
+                                        To be Africa’s most trusted manpower and logistics partner, setting new standards for reliability, professionalism, and performance.
                                     </div>
-                                    <div className='ratingText'>lost-time incidents</div>
-                                </div>
+                                )}
+
+                                {activeTab === "value" && (
+                                    <div>
+                                        <ul>
+                                            <li><strong>Professionalism: </strong> Precision, accountability, and excellence in execution.</li>
+
+                                            <li><strong>Integrity: </strong> We deliver what we promise, every time.</li>
+
+                                            <li><strong>Safety: </strong> Every project, every person, zero incidents.</li>
+
+                                            <li><strong>Innovation: </strong> Using data and technology to simplify logistics.</li>
+
+                                            <li><strong>Partnership: </strong> Collaboration and trust drive everything we do.</li>
+                                        </ul>
+
+                                    </div>
+                                )}
                             </div>
                         </div>
 
@@ -75,28 +105,58 @@ function About() {
 
                 {/* another section here */}
 
-                <div className='aboutbannerSection'>
-                    <div className='container'>
-                        <div className='aboutbannerContent'>
-                            <div className='pageTitle'>We help organizations build dependable teams, streamline logistics, and empower their workforce through accredited training.</div>
-                            <div className="bannerLink">
-                                <div className="pagesubTitle">
-                                    <MdOutlineAddIcCall className="icon" />
-                                    <span>Call us to book an appointment:</span>
+                <div className="aboutBannerSectionWrapper">
+                    <div className="container">
+                        <div className='row g-4'>
+                            <div className="col-lg-6 col-md-12 col-sm-12">
+                                <div className="contentWrapper">
+                                    <div className='pagesubTitle'>What we do</div>
+                                    <div className='pageTitle'>Hybridsmith offers end-to-end support across manpower, logistics, and training.</div>
+                                    <div className='pageText'><strong>Our Solutions Include:</strong> </div>
 
-                                    <div className="text">
-                                        <a href="tel:(+234) 807 836 6949">(+234) 807 836 6949</a>
+                                    <div className='pageText'>
+                                        <ul>
+                                            <li>Technical and logistics manpower outsourcing</li>
+                                            <li>Warehouse and transport optimization</li>
+                                            <li>Procurement and governance support</li>
+                                            <li>Accredited training and competency development</li>
+                                        </ul>
+                                    </div>
+
+                                    <div className='pageText'>We’ve delivered manpower and logistics solutions for EPC, oil & gas, power, and industrial clients, deploying over 1,000 professionals to projects across Nigeria and West Africa.</div>
+
+                                    <div style={{ marginTop: '20px' }}>
+                                        <Button text='View Our Services' goTo='/services' />
                                     </div>
                                 </div>
-                                <div className="or">Or</div>
-                                <Button text="Contact Us"
-                                    goTo="/contact_us"
-                                />
                             </div>
+                            <div className="col-lg-6 col-md-12 col-sm-12">
+                                <div className='aboutbannerContent'>
+                                    <div className='pagesubTitle'>Our Promise</div>
+                                    <div className='pageTitle'>Performance you can measure. Partnerships you can trust.</div>
+                                    <div className='pageText'>We combine deep industry expertise with modern logistics and governance tools to ensure every client achieves operational efficiency and compliance.</div>
+                                    <div className="bannerLink">
+                                        <div className="pagesubTitle">
+                                            <MdOutlineAddIcCall className="icon" />
+                                            <span>Call us to request our services:</span>
 
+                                            <div className="text">
+                                                <a href="tel:(+234) 901 882 1570">(+234) 901 882 1570</a>
+                                            </div>
+                                        </div>
+                                        <div className="or">Or</div>
+                                        <Button text="Contact Us"
+                                            goTo="/contact_us"
+                                        />
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
+
                 </div>
+
+
             </div>
         </div>
     )

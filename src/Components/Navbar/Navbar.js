@@ -80,7 +80,7 @@ function Navbar() {
                                         <div className="content">
                                             <div className="iconContainer"><MdOutlineAddIcCall className="icon" /></div>
                                             <div className="text">
-                                                <a href="tel:(+234) 807 836 6949">(+234) 807 836 6949</a>
+                                                <a href="tel:(+234) 901 882 1570">(+234) 901 882 1570</a>
                                             </div>
                                         </div>
                                     </div>
@@ -97,7 +97,7 @@ function Navbar() {
                                     <div className="content">
                                         <div className="iconContainer"><MdAccessTime className="icon" /></div>
                                         <div className="text">
-                                            Mon to Fri : 9am to 6pm
+                                            Mon to Fri : 8:00am to 5:00pm
                                         </div>
                                     </div>
                                 </div>

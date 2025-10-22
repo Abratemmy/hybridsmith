@@ -100,6 +100,14 @@
       transform: translateY(-1px);
     }
   }
+  .submitDefault{
+    background: rgb(158, 156, 156);
+    cursor: not-allowed!important;
+    opacity: 0.6;
+    &:hover{
+      background: rgb(158, 156, 156);
+    }
+  }
 }
 
 /* ✅ Success Modal */
@@ -109,7 +117,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.45);
+  background: rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -127,7 +135,7 @@
   animation: popIn 0.3s ease;
 
   h3 {
-    color: #004aad;
+    color: var(--primaryColor);
     margin-bottom: 10px;
   }
 
@@ -138,14 +146,14 @@
 
   .closeBtn {
     padding: 10px 25px;
-    background: #004aad;
+    background: var(--secondaryColor);
     color: white;
     border: none;
     border-radius: 8px;
     cursor: pointer;
     transition: 0.3s ease;
     &:hover {
-      background: #00367a;
+      background: var(--primaryColor);
     }
   }
 }

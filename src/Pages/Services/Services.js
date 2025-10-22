@@ -1,20 +1,29 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './Services.scss';
 import OtherPagesBanner from '../../Components/OtherPagesBanner/OtherPagesBanner';
 import service1 from '../../Images/service1.png';
 import service2 from '../../Images/service2.png';
 import service3 from '../../Images/service3.png';
 import service4 from '../../Images/service4.png';
-import service5 from '../../Images/service5.png';
+
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 function Services() {
+    useEffect(() => {
+        AOS.init({
+            duration: 1000, // animation duration in ms
+            offset: 100, // offset (in px) from the original trigger point
+        });
+        AOS.refresh();
+    }, []);
     return (
         <div>
             <OtherPagesBanner
                 leftText="We offer a diverse range of solutions"
                 rightText="Our Services"
-                otherPagesTextSlide="What we do at"
-                otherPagesTextSlideSpan="Hybridsmith"
+                otherPagesTextSlide="Solutions that move industries "
+                otherPagesTextSlideSpan="forward."
             />
 
             <div className="servicesPage">
@@ -23,10 +32,13 @@ function Services() {
                         <div className="topContent">
                             <div className='pagesubTitle'>Our Services</div>
                             <div className='pageTitle'>We provide tailored solutions to meet your unique needs.</div>
+                            <div className='pageText'>
+                                At Hybridsmith, we connect people, systems, and logistics to create performance you can measure. Our services are designed for organizations that demand reliability, speed, and safety  from project start-up to long-term operations.
+                            </div>
                         </div>
                         <div className='row g-4' style={{ margin: '20px 0px' }}>
                             <div className="col-lg-6 col-md-12 col-sm-12 ">
-                                <div className="card">
+                                <div className="card" data-aos="fade-up" data-aos-duration="1000" >
                                     <div className="cardIcon">
                                         <img src={service1} alt="Service" className='icon' />
                                     </div>
@@ -40,21 +52,7 @@ function Services() {
                             </div>
 
                             <div className="col-lg-6 col-md-12 col-sm-12 ">
-                                <div className="card">
-                                    <div className="cardIcon">
-                                        <img src={service5} alt="Service" className='icon' />
-                                    </div>
-                                    <div className="cardContent">
-                                        <div className="cardTitle">SCM Advisory & Procurement Governance</div>
-                                        <div className="cardText">
-                                            Vendor audits, contract reviews, supplier performance management, ESG compliance.
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div className="col-lg-6 col-md-12 col-sm-12 ">
-                                <div className="card">
+                                <div className="card" data-aos="fade-up" data-aos-duration="1100">
                                     <div className="cardIcon">
                                         <img src={service4} alt="Service" className='icon' />
                                     </div>
@@ -68,7 +66,7 @@ function Services() {
                             </div>
 
                             <div className="col-lg-6 col-md-12 col-sm-12 ">
-                                <div className="card">
+                                <div className="card" data-aos="fade-up" data-aos-duration="1200">
                                     <div className="cardIcon">
                                         <img src={service3} alt="Service" className='icon' />
                                     </div>
@@ -82,7 +80,7 @@ function Services() {
                             </div>
 
                             <div className="col-lg-6 col-md-12 col-sm-12 ">
-                                <div className="card">
+                                <div className="card" data-aos="fade-up" data-aos-duration="1300">
                                     <div className="cardIcon">
                                         <img src={service2} alt="Service" className='icon' />
                                     </div>
