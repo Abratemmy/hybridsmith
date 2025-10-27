@@ -33,7 +33,7 @@ function Home() {
                         <div 
                             className='title animate__animated animate__fadeInDown animate__delay-0.5s animate__slow'
                         >
-                            World-class manpower. Optimized logistics solutions.<span>Accredited training that delivers results.</span>
+                            World-class manpower. Optimized logistics solutions.<span> Accredited training that delivers results.</span>
                         </div>
                         <p>Helping organizations build reliable teams, optimize logistics operations, and empower people through accredited training that drives measurable results.</p>
                         <div className='bannerButtons animate__animated animate__fadeInUp animate__delay-1s'>
