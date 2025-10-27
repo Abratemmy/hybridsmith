@@ -30,7 +30,11 @@ function Home() {
             <div className="homeBanner">
                 <div className='container'>
                     <div className='content'>
-                        <div className='title animate__animated animate__fadeInDown animate__delay-0.5s animate__slow'>World-class manpower. Smarter logistics. <span>Accredited training that delivers results.</span></div>
+                        <div 
+                            className='title animate__animated animate__fadeInDown animate__delay-0.5s animate__slow'
+                        >
+                            World-class manpower. Optimized logistics solutions.<span>Accredited training that delivers results.</span>
+                        </div>
                         <p>Helping organizations build reliable teams, optimize logistics operations, and empower people through accredited training that drives measurable results.</p>
                         <div className='bannerButtons animate__animated animate__fadeInUp animate__delay-1s'>
                             <Button text='Talk to an Expert'
