@@ -98,7 +98,7 @@ function Home() {
                                 <div className='helpText'>
                                     <div className='pageTitle'>Power your operations with Hybridsmith.</div>
                                     <div className='title'>Ready to optimize your logistics, build a reliable team, and empower your workforce with accredited training? Let’s talk about how Hybridsmith can support your success.</div>
-                                    <Button text='Contact Us' goTo='/contact' />
+                                    <Button text='Contact Us' goTo='/contact_us' />
                                 </div>
                             </div>
                         </div>
